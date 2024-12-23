@@ -26,7 +26,7 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     client.connect();
 
-    const productsCollection = client.db("handicraftsDB").collection("products");
+    const productsCollection = client.db("handicraftDB").collection("products");
 
     app.get('/products',async(req,res)=>{
       const result = await productsCollection.find().toArray();
@@ -47,7 +47,7 @@ run().catch(console.dir);
 
 
 app.get("/", (req, res) => {
-  res.send("Handicraft is running ff");
+  res.send("Handicraft is running");
 });
 
 app.listen(port, () => {
